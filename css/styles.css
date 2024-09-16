@@ -133,6 +133,29 @@ button {
   color: var(--navy-blue);
 }
 
+/* Socials */
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.socials-item {
+  width: 40px;
+  height: 40px;
+  background-color: var(--iris);
+  border-radius: 50%;
+}
+.socials-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.socials-icon {
+}
+
 /* Card set */
 .card-set {
   gap: 24px;
@@ -284,6 +307,9 @@ button {
 }
 
 .feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 264px;
   height: 112px;
   flex-shrink: 0;
@@ -338,10 +364,20 @@ button {
   color: var(--navy-blue);
 }
 .team-desc {
+  margin-bottom: 8px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
   color: var(--slate);
+}
+.socials {
+}
+.socials-item {
+}
+.socials-link {
+}
+.socials-icon {
+  fill: var(--cloud);
 }
 /* #endregion Team */
 
@@ -390,7 +426,12 @@ button {
   background-color: var(--navy-blue);
   padding: 100px 0;
 }
-
+.footer-container {
+  display: flex;
+}
+.footer-data {
+  margin-right: 120px;
+}
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
@@ -402,6 +443,21 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--cloud);
+}
+
+.footer-socials {
+}
+
+.footer-socials-title {
+  text-align: left;
+  color: var(--white);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.32px;
+  margin-bottom: 16px;
 }
 
 /* #endregion Footer */
