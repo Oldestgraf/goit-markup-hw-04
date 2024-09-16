@@ -22,6 +22,8 @@
   --items: 4;
   --ident-row: 48px;
   --ident-col: 24px;
+
+  --anim-socials: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* #endregion Variables */
@@ -145,6 +147,8 @@ button {
   height: 40px;
   background-color: var(--iris);
   border-radius: 50%;
+  transition: var(--anim-socials);
+  transition-property: background-color;
 }
 .socials-link {
   width: 100%;
@@ -152,8 +156,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.socials-icon {
 }
 
 /* Card set */
@@ -194,9 +196,8 @@ button {
   align-items: center;
   gap: 40px;
 }
-.header-nav-item {
-}
 .header-nav-link {
+  position: relative;
   padding: 24px 0;
   display: block;
   font-family: var(--font-family);
@@ -205,6 +206,22 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--navy-blue);
+  transition: var(--anim-socials);
+  transition-property: color;
+}
+.header-nav-link::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: transparent;
+}
+.header-nav-link.active::after {
+  background: var(--ocean);
 }
 .header-nav-link:hover,
 .header-nav-link:focus {
@@ -226,6 +243,8 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--slate);
+  transition: var(--anim-socials);
+  transition-property: color;
 }
 .header-address-link:hover,
 .header-address-link:focus {
@@ -281,6 +300,8 @@ button {
   letter-spacing: 0.04em;
   color: var(--white);
   background-color: var(--iris);
+  transition: var(--anim-socials);
+  transition-property: background-color;
 }
 .btn:hover,
 .btn:focus {
@@ -353,6 +374,11 @@ button {
   width: calc((100% - 72px) / 4);
   border-radius: 0px 0px 4px 4px;
   background: var(--white);
+  border-radius: 0px 0px 4px 4px;
+  background: var(--WHITE, #fff);
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 .team-capture {
   margin-bottom: 8px;
@@ -372,9 +398,11 @@ button {
 }
 .socials {
 }
-.socials-item {
-}
 .socials-link {
+}
+.socials-item:focus,
+.socials-item:hover {
+  background-color: var(--ocean);
 }
 .socials-icon {
   fill: var(--cloud);
@@ -398,8 +426,43 @@ button {
   border-left: 1px solid var(--CORNFLOWER, #e7e9fc);
 }
 
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+}
+
 .portfolio-item {
   width: calc((100% - 48px) / 3);
+  transition: var(--anim-socials);
+  transition-property: box-shadow;
+}
+.portfolio-item:hover .overlay {
+  transform: translateY(0);
+}
+.portfolio-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--iris);
+  transform: translateY(100%);
+  transition: var(--anim-socials);
+  transition-property: transform;
+}
+.overlay-text {
+  text-align: left;
+  color: var(--cloud);
+  font-family: Roboto;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.32px;
+  padding: 40px 32px 164px;
 }
 .portfolio-caption {
   margin-bottom: 8px;
@@ -445,7 +508,9 @@ button {
   color: var(--cloud);
 }
 
-.footer-socials {
+.footer-socials-item:focus,
+.footer-socials-item:hover {
+  background-color: var(--green);
 }
 
 .footer-socials-title {
